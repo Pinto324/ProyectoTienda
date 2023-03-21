@@ -1,0 +1,190 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 17/03/2023, 00:20:04
+    Author     : branp
+*/
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
+html{
+    background-color: #fffffff4;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family:  Lucida;
+    color: #fff;
+    font-weight: bold;
+    color: black;
+}
+a{
+    text-decoration: none;
+}
+p{
+    color: black;
+    font-family: 'Caveat Brush';
+    font-size: xx-large;
+}
+.nav-link{
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    justify-content: center;
+    flex-direction: column;
+}
+
+header{
+    background-color: #fff;
+}    
+
+label{
+    font-size: large;
+    color: black;
+}
+.contenedorGrande{
+    display: grid;
+    margin: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+.contenedor{
+    display: flex;
+    align-items:center;
+    justify-content:space-evenly;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+}
+.menuDesplegable{
+    height: 82vh;
+    width: 20vw;   
+    display: grid;
+    place-items: center;
+    align-items:center;
+    justify-content:center;
+    transform: translateX(-33vw);
+    background-color: rgb(237, 226, 191);
+    border-width: 2px; 
+    border-style: solid; 
+    border-color: rgb(0, 0, 0);
+    transition: 300ms ease-in-out;
+    z-index: 3;
+}
+.click{
+    transform: translateX(0vw);
+}
+.nav{
+    width: 15vw;
+    height: 82vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 90%;
+    width: 100%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+.link{
+    color: black;
+    font-family: 'Caveat Brush';
+    font-size: xx-large;
+    width: 100%;
+    height: 13%;
+    text-align: center;
+    place-items: center;
+    justify-content: center;
+    border-width: 2px; 
+    border-style: solid; 
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(0, 0, 0);
+    padding: 5px;
+    margin-right: 30px;
+}
+
+.slider{
+    width: 40.8%;
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    margin-left: 10%;
+}
+.slider ul{
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    width: 300%;
+    animation: cambio 15s infinite alternate linear;
+}
+.slider li{
+    width: 100%;
+    list-style: none;
+}
+.slider img{
+    width: 11vw;
+    height: 22vh;
+}
+.contenedorSlider{
+    width: 40vw;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-width: 2px; 
+    border-style: solid; 
+    background-color: rgb(237, 226, 191);
+    border-color: rgb(0, 0, 0);
+}
+.slider-inner{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    width: 100%;
+    background-color: #fff;
+    border-width: 2px; 
+    border-style: solid; 
+    border-color: rgb(0, 0, 0);
+}   
+
+@keyframes cambio {
+    0%{margin-left: 0;}
+    15%{margin-left: 0;}
+
+    25%{margin-left:-99.8%}
+    65%{margin-left:-99.8%}
+
+    75%{margin-left:-199.8%}
+    100%{margin-left: -199.8%;}
+
+}
+@media(hover: hover){
+    .nav-link:hover{
+        background-color: #cdcdcd;
+        transition: 300ms ease-in-out;
+        transform: scale(1.2);
+    }
+}
+
+#logo{
+    font-size: 80px;
+    font-family:'Caveat Brush';
+    color: black;
+}
+.contenedorPrincipal{
+    display: flex;
+    flex-direction:row;
+    align-items:start;
+    justify-content:space-between;
+    background: url('fondo picos.png');
+    height: 560px;
+    width: 1345px;
+}
+.contenedorDeNav{
+    display: flex;
+    flex-direction: column;
+}

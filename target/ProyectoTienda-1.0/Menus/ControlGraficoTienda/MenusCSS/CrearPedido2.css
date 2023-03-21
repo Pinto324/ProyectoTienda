@@ -1,0 +1,163 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 17/03/2023, 01:11:41
+    Author     : branp
+*/
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
+
+html{
+    background-color: #fffffff4;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family:  Lucida;
+    color: #fff;
+    font-weight: bold;
+    color: black;
+}
+a{
+    text-decoration: none;
+}
+p{
+    color: black;
+    font-family: 'Caveat Brush';
+    font-size: xx-large;
+    cursor:default;;
+}
+label{
+    font-size: large;
+    color: black;
+}
+.nav-link{
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    justify-content: center;
+    flex-direction: column;
+}
+header{
+    background-color: #fff;
+}   
+input{
+    height: 20px;
+    width: 70px;
+}
+button{
+     color: rgb(255, 255, 255);
+  background-color: #d3b162;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3em;
+  width: 8em;
+  font-size: large;
+  font-weight: 600;
+  padding-top: 5%;
+    padding-bottom: 5%;
+}
+.contenedorGrande{
+    display: grid;
+    margin: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+.contenedor{
+    display: flex;
+    align-items:center;
+    justify-content:space-evenly;
+    flex-direction: row;
+    height: 80px;
+    width: 100%;
+}
+#logo{
+    font-size: 40px;
+    font-family:'Caveat Brush';
+    color: black;
+}
+#btnA{
+    color: rgb(255, 255, 255);
+  background-color: #d3b162;
+  border-radius: 50px;
+  height: 3em;
+  width: 8em;
+  font-size: large;
+  font-weight: 600;
+  padding-top: 5%;
+    padding-bottom: 5%;
+}
+.contenedorPrincipal{
+    display: flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
+    background: url(https://www.everywhereist.com/wp-content/themes/everywhereist-v3/images/bg-light-green.jpg);
+    height: 600px;
+    width: 1320px;
+}
+.divDePedido{
+    width: 40vw;
+    height: 40vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    border-width: 2px; 
+    border-style: solid; 
+    background-color: rgb(237, 226, 191);
+    border-color: rgb(0, 0, 0);
+}
+.divForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.divForm{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.divSeparador{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.divSeparadorInterno{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+select{
+    width: 100%;
+    position: relative;
+    padding: 16px 30px 16px 50px;
+    border-radius: 50px;
+    font: 400 22px arial;
+    -webkit-appearance: none;
+    appearance: none;
+    color: black;
+    border: 1px solid black;
+    
+}
+select::-ms-expand{
+    display: none;
+}
+select:focus{
+    outline: none;
+    box-shadow: 0 0 10px -1px #931dff;
+}
