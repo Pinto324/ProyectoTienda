@@ -72,7 +72,7 @@
                 <div class="">
                     <div class=""></div>
                     <ul>
-                        <form action="UploadJSONServlet" method="post" enctype="multipart/form-data">
+                        <form action="/UploadJSONServlet" method="post" enctype="multipart/form-data">
                             <label for="jsonFile">Seleccione un archivo JSON para cargar:</label>
                             <input type="file" name="jsonFile" id="jsonFile">
                             <input type="submit" value="Cargar archivo">
