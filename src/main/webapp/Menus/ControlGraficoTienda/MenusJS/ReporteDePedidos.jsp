@@ -84,7 +84,8 @@
                     out.print("<script>location.replace('ReporteDePedidos.jsp');</script>");
                 }
              }else if(request.getParameter("btnDesFiltrar")!=null){
-                Rs = cn.IniciarConexion().executeQuery("select * From Pedidos WHERE CodigoTienda = '"+Tienda.BuscarPorUsuario(Sesion.getAttribute("user").toString())[6]+"';");
+                String c = Tienda.BuscarPorUsuario(Sesion.getAttribute("user").toString())[6];
+                Rs = cn.IniciarConexion().executeQuery("select * From Pedidos WHERE CodigoTienda = '"+c+"';");
             }
                                 // Reiniciamos el cursor
                                 Rs.beforeFirst();

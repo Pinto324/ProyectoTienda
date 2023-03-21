@@ -66,9 +66,9 @@
                     </form>
                              <%
              if(request.getParameter("btnFiltrar")!=null){
-                Rs = cn.IniciarConexion().executeQuery("select * From ProductosDeCadaTienda WHERE Existencias < "+ request.getParameter("cantidad")+" AND CodigoDeTienda = '"+Tienda.ComprobarUsuario(Sesion.getAttribute("user").toString())[6]+"';");
+                Rs = cn.IniciarConexion().executeQuery("select * From ProductosDeCadaTienda WHERE Existencias < "+ request.getParameter("cantidad")+" AND CodigoDeTienda = '"+Tienda.BuscarPorUsuario(Sesion.getAttribute("user").toString())[6]+"';");
              }else if(request.getParameter("btnDesFiltrar")!=null){
-                Rs = cn.IniciarConexion().executeQuery("select * From ProductosDeCadaTienda WHERE CodigoDeTienda = '"+Tienda.ComprobarUsuario(Sesion.getAttribute("user").toString())[6]+"';");
+                Rs = cn.IniciarConexion().executeQuery("select * From ProductosDeCadaTienda WHERE CodigoDeTienda = '"+Tienda.BuscarPorUsuario(Sesion.getAttribute("user").toString())[6]+"';");
             }
          %>
                         <div class="divSeparadorInterno">    

@@ -28,7 +28,6 @@ import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -39,8 +38,8 @@ import org.json.*;
  *
  * @author branp
  */
-@WebServlet("/UploadJSONServlet")
-@MultipartConfig
+@WebServlet(name = "MiServlet", urlPatterns = { "/MiServlet" })
+
 public class CargaDeArchivo extends HttpServlet {
     private ManejadorDePedidos ManajadorPedidos = new ManejadorDePedidos();
     private Usuarios MUsuarios = new Usuarios();
@@ -52,7 +51,7 @@ public class CargaDeArchivo extends HttpServlet {
     private Envios Env = new Envios();
     private static final SimpleDateFormat FormatoFecha = new SimpleDateFormat("yyyy-MM-dd");
     private Productos MProducto = new Productos();
-    
+    @Override
   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
   // Obtener el archivo subido
   Part archivoPart = request.getPart("jsonFile");
@@ -228,6 +227,6 @@ public class CargaDeArchivo extends HttpServlet {
       }
     
   }
-        response.sendRedirect("MenuInicialAdmin.jsp");   
+        response.sendRedirect("../../Web Pages/Menus/ControlGraficoAdmin/MenuInicialAdmin.jsp");   
     }
 }
