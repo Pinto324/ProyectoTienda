@@ -4,6 +4,15 @@
     Author     : branp
 --%>
 
+<%@page import="java.io.File"%>
+<%@page import="org.json.JSONObject"%>
+<%@page import="java.io.FileReader"%>
+<%@page import="java.io.IOException"%>
+<%@page import="java.io.InputStreamReader"%>
+<%@page import="java.io.BufferedReader"%>
+<%@page import="java.io.InputStream"%>
+<%@page import="java.io.BufferedReader"%>
+<%@page import="java.io.InputStream"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -26,7 +35,8 @@
                     out.print("<script>location.replace('../../Login.jsp');</script>");
                 }
          %>
-        <section>
+          <jsp:useBean id="cn" class="Controles.CargaDeArchivo" scope="page"></jsp:useBean>
+         <section>
         <header style="z-index: 4;">
             <div class="contenedorGrande">
                 <div class="contenedor">
@@ -72,15 +82,26 @@
                 <div class="">
                     <div class=""></div>
                     <ul>
-                        <form action="/MiServlet" method="post" enctype="multipart/form-data">
-                            <label for="jsonFile">Seleccione un archivo JSON para cargar:</label>
-                            <input type="file" name="jsonFile" id="jsonFile">
-                            <input type="submit" value="Cargar archivo">
-                        </form>
+<form action="upload.jsp" method="post" enctype="multipart/form-data">
+    <input type="file" name="jsonFile">
+    <input type="submit" value="Enviar">
+</form>
                     </ul>
                 </div>
             </div>
         </section>
         <script src="MenuInicialAdmin.js"></script>
+        <%@ page import="java.io.*, com.fasterxml.jackson.databind.*" %>
+     <%   
+    // Obtener el archivo enviado en el formulario
+    Part filePart = request.getPart("jsonFile");
+
+    // Leer el contenido del archivo y convertirlo en un objeto JSON
+    InputStream fileContent = filePart.getInputStream();
+    ObjectMapper mapper = new ObjectMapper();
+    JsonNode jsonNode = mapper.readTree(fileContent);
+    JSONObject jsonObject = new JSONObject(jsonNode.toString());
+    cn.doPost(jsonObject);
+        %>
     </body>
 </html>

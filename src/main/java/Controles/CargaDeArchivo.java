@@ -19,8 +19,6 @@ import Objetos.Producto;
 import Objetos.ProductoDeCadaTienda;
 import Objetos.Usuario;
 import java.io.IOException;
-import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.text.ParseException;
@@ -28,16 +26,12 @@ import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
 import org.json.*;
 /**
  *
  * @author branp
  */
-public class CargaDeArchivo extends HttpServlet {
+public class CargaDeArchivo {
     private ManejadorDePedidos ManajadorPedidos = new ManejadorDePedidos();
     private Usuarios MUsuarios = new Usuarios();
     private ManejadorUsuario manejadorUsuario = new ManejadorUsuario();
@@ -49,17 +43,7 @@ public class CargaDeArchivo extends HttpServlet {
     private static final SimpleDateFormat FormatoFecha = new SimpleDateFormat("yyyy-MM-dd");
     private Productos MProducto = new Productos();
     
-  protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-  // Obtener el archivo subido
-  Part archivoPart = request.getPart("jsonFile");
-  InputStream archivoStream = archivoPart.getInputStream();
-  
-  // Leer el contenido del archivo como un string
-  String contenido = new String(archivoStream.readAllBytes(), StandardCharsets.UTF_8);
-  
-  // Convertir el string a un objeto JSON
-  JSONObject objetoJson = new JSONObject(contenido);
-  
+  public boolean doPost(JSONObject objetoJson) throws ServletException, IOException {  
   // Acceder a los datos del objeto JSON
   //MANEJO DE USUARIOS:
   //ADMINS:
@@ -223,7 +207,7 @@ public class CargaDeArchivo extends HttpServlet {
           Logger.getLogger(CargaDeArchivo.class.getName()).log(Level.SEVERE, null, ex);
       }
     
-  }
-        response.sendRedirect("../../Web Pages/Menus/ControlGraficoAdmin/MenuInicialAdmin.jsp");   
+        }
+    return true;
     }
 }
