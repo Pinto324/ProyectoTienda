@@ -91,17 +91,5 @@
             </div>
         </section>
         <script src="MenuInicialAdmin.js"></script>
-        <%@ page import="java.io.*, com.fasterxml.jackson.databind.*" %>
-     <%   
-    // Obtener el archivo enviado en el formulario
-    Part filePart = request.getPart("jsonFile");
-
-    // Leer el contenido del archivo y convertirlo en un objeto JSON
-    InputStream fileContent = filePart.getInputStream();
-    ObjectMapper mapper = new ObjectMapper();
-    JsonNode jsonNode = mapper.readTree(fileContent);
-    JSONObject jsonObject = new JSONObject(jsonNode.toString());
-    cn.doPost(jsonObject);
-        %>
     </body>
 </html>
